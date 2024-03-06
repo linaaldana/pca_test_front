@@ -1,0 +1,17 @@
+
+
+services:
+    pca_test_front:
+        container_name: pca_test_front
+        build: .
+        image: pca_test_front:v1
+        ports: 
+            - 8080:80
+        expose:
+            - "80"
+        networks:
+            - internalnet
+    
+networks:
+    internalnet:
+        driver: bridge

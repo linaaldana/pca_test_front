@@ -1,0 +1,123 @@
+<section id="bodyCotainer">
+    <div class="filterSearchFilter">
+        <aside id="flightSearch">
+            <form novalidate="" name="searchFlight" class="ng-valid ng-dirty ng-touched">
+                <div class="radio-toolbar">
+                    <input type="radio" id="radioOneWay" name="trip" value="One Way" checked="">
+                    <label for="radioOneWay">Solo Ida</label>
+                    <input type="radio" id="radioRoundTrip" name="trip" value="Round Trip"><label
+                        for="radioRoundTrip">Ida y Vuelta</label>
+                </div>
+                <div class="sourceDesination">
+                    <input type="text" name="origen" [(ngModel)]="origen" class="ng-untouched ng-pristine ng-valid">
+
+
+                </div>
+                <div class="sourceDesination">
+                    <input name="destino" [(ngModel)]="destino" class="ng-untouched ng-pristine ng-valid">
+
+
+                </div>
+                <div id="depatureDate">
+                    <input type="date" [(ngModel)]="fecha" name="fecha_salida" placeholder="Fecha Salida"
+                        onfocus="(this.type='date')" id="fecha_salida" class="ng-valid ng-dirty ng-touched">
+                </div>
+                <div id="returnDate">
+                    <input type="text" placeholder="Fecha Regreso" onfocus="(this.type='date')" id="dateOfReturn">
+                </div>
+                
+                <div><input id="searchBtn" type="button" (click)="buscarVuelos()" value="Buscar Vuelos"></div>
+            </form>
+        </aside>
+        <div class="filterDetails">
+            <div id="showFilter" class="showFilter"></div>
+            <div id="showFilterRoundTrip" class="showFilter"></div>
+        </div>
+    </div>
+    <div id="FlightResult">
+        <div class="flightOnward flightResultWrapper" style="display: block; padding: 1% !important;">
+            <div>
+                <div class="row">
+                    <div class="col-5">
+                        <div class="headerStartingDate">
+                            <h4 class="headStartLoc" id="tituloOrigen">Cali</h4>
+                            <p class="headStartDate">2024-03-06</p>
+                        </div>
+                    </div>
+                    <div class="col-2 text-center"><i class="exchangeIc fa fa-long-arrow-right"
+                            style="padding-top: 25%;"></i></div>
+                    <div class="col-5 text-end">
+                        <div class="headeReturnDate">
+                            <h4 class="headEndLoc" id="tituloDestino">Bogotá</h4>
+                            <p class="headEndDate">2024-03-06</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flightOnward flightResultWrapper" style="display: block; padding: 1% !important;">
+            <div class="row">
+                <div class="col-3"> Aerolinea </div>
+                <div class="col-3"> Fecha Salida </div>
+                <div class="col-3"> Fecha Llegada </div>
+                <div class="col-1"> Precio </div>
+                <div class="col-2"></div>
+
+            </div>
+        </div>
+        <div class="flightOnward flightResultWrapper" *ngFor="let vuelo of listaVuelos"
+            style="display: block; padding: 1% !important;">
+            <div class="row">
+                <div class="col-3">
+                    <div class="row">
+                        <div class="col-4"><img class="logo"
+                                src="https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=14"></div>
+                        <div class="col-8">
+                            <div>{{vuelo.aerolinea.nombre}}</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3"> {{vuelo.fechaSalida}} </div>
+                <div class="col-3"> {{vuelo.fechaLlegada}} </div>
+                <div class="col-1"> {{vuelo.precio}} </div>
+                <div class="col-2"><input type="button" value="Reservar" class="reservaBtn"
+                        (click)="reservarVuelo(vuelo.id)"></div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</section>
+
+<div class="modal" id="reservaModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Reservar Vuelo</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="cerrarModal()"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Cantidad pasajeros</label>
+                        <input type="number" min="1" [(ngModel)]="reservaObj.cantidadPasajeros" class="form-control"/>
+                    </div>
+                    <div class="col-6">
+                        <label for="">Clase</label>
+                        <input type="text" class="form-control" [(ngModel)]="reservaObj.clase" />
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="cerrarModal()"
+                    data-bs-dismiss="modal">Close</button>
+                <button type="button" (click)="registrarReserva()" class="btn btn-primary">Reservar</button>
+            </div>
+        </div>
+    </div>
+</div>

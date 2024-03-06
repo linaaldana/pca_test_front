@@ -1,0 +1,43 @@
+<main>
+    <div class="container">
+        
+            <h2>Estadisticas</h2>
+        
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Aerolineas con mayor cantidad de reservas</h5>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Aerolinea</th>
+                                    <th>Reservas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor=" let item of datos; let i=index">
+                                    <td>{{item.aerolinea}}</td>
+                                    <td>{{item.reservas}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card" style="height: 13rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Cantidad de aerolineas registradas:</h5>
+                        <h5 class="card-text">{{cantidadAerolineas}}</h5>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</main>

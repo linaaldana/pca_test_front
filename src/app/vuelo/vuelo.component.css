@@ -1,0 +1,57 @@
+/* Estilos generales */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-top: 0;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para el header */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Estilos para el formulario */
+  .formulario {
+    margin-bottom: 20px;
+  }
+  
+  .formulario form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .formulario label {
+    margin-right: 10px;
+    width: 100px;
+  }
+  
+  .formulario input {
+    flex: 1;
+    padding: 5px;
+  }
+  
+  .formulario select {
+    flex: 1;
+    padding: 5px;
+  }
+  
+  .formulario button {
+    background-color: #333;
+    color: #fff;
+    font-size: 1em;
+    margin-top: 10px;
+    padding: 10px 20px;
+  }

@@ -1,0 +1,55 @@
+<main>
+    <div class="container">
+        <h2>Formulario de registro de vuelos</h2>
+        <form action="#">
+            <div class="row">
+                <div class="col-6">
+                    <label for="origen">Origen:</label>
+                    <input class="form-control" type="text" [(ngModel)]="vueloObj.origen" id="origen" name="origen"
+                        placeholder="Introduce tu ciudad de origen" required>
+                </div>
+                <div class="col-6">
+                    <label for="destino">Destino:</label>
+                    <input class="form-control" type="text" [(ngModel)]="vueloObj.destino" id="destino" name="destino"
+                        placeholder="Introduce tu ciudad de destino" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="fecha-salida">Fecha de salida:</label>
+                    <input class="form-control" type="date" [(ngModel)]="vueloObj.fechaSalida" id="fecha-salida"
+                        name="fecha-salida" required>
+                </div>
+                <div class="col-6">
+                    <label for="fecha-llegada">Fecha de llegada:</label>
+                    <input class="form-control" type="date" [(ngModel)]="vueloObj.fechaLlegada" id="fecha-llegada"
+                        name="fecha-llegada" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                <label for="aerolinea">Aerolínea:</label>
+                <select class="form-control" [(ngModel)]="vueloObj.aerolinea" id="aerolinea" name="aerolinea" required>
+                    <option value="">Seleccione una aerolinea</option>
+                    <option *ngFor="let item of listaAerolineas" [value]="item.id">{{item.nombre}}</option>
+                </select>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label for="precio">Precio:</label>
+                    <input class="form-control" type="number" [(ngModel)]="vueloObj.precio" id="precio" name="precio"
+                        placeholder="Introduce el precio del vuelo" required>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                <button class="form-control" type="submit" (click)="onGuardarVuelo()">Registrar datos</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</main>

@@ -1,0 +1,93 @@
+/* Estilos generales */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-top: 0;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para el header */
+  header {
+    background-color: rgb(129, 134, 100);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Estilos para la sección de origen y destino */
+  .origen-destino {
+    margin-bottom: 20px;
+  }
+  
+  .origen-destino form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .origen-destino label {
+    margin-right: 10px;
+    width: 100px;
+  }
+  
+  .origen-destino input {
+    flex: 1;
+    padding: 5px;
+  }
+  
+  /* Estilos para la sección de fechas */
+  .fechas {
+    margin-bottom: 20px;
+  }
+  
+  .fechas form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .fechas label {
+    margin-right: 10px;
+    width: 100px;
+  }
+  
+  .fechas input {
+    flex: 1;
+    padding: 5px;
+  }
+  
+  /* Estilos para la sección de pasajeros */
+  .pasajeros {
+    margin-bottom: 20px;
+  }
+  
+  .pasajeros form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .pasajeros label {
+    margin-right: 10px;
+    width: 100px;
+  }
+  
+  .pasajeros input {
+    flex: 1;
+    padding: 5px;
+  }
+  
+  /* Estilos para la sección de búsqueda */
+  .buscar {
+    text-align: center;
+  }
+  
+  
+  
+ 
